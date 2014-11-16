@@ -15,20 +15,18 @@
 //= require turbolinks
 //= require_tree .
 
+$(window).ready(function(){
+
+  window.map = L.map('map').setView([29.817178,-95.4012915], 10);
 
 
-$.getJSON("http://localhost:3000/api/places")
-.done(function(data){
-  var pizzaIcon = L.icon({
-    iconUrl: 'http://www2.psd100.com/ppp/2013/11/2701/Pizza-1127205207.png',
-    iconSize:    [38, 95], // size of the icon
-    iconAnchor:  [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+  L.tileLayer('https://{s}.tiles.mapbox.com/v3/{id}/{z}/{x}/{y}.png', {
+    maxZoom: 20,
+    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+      '<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+      'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    id: 'examples.map-i875mjb7'
+  }).addTo(window.map);
+
+
 });
-  data.pizzas.forEach(function(pizza){
-      L.marker([pizza.lat, pizza.lng], {icon: pizzaIcon})
-      .addTo(window.map)
-      .bindPopup(pizza.name);
-});
-  });
-</script>
