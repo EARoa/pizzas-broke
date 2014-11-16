@@ -41,3 +41,7 @@ gem 'spring',        group: :development
 gem "active_model_serializers"
 gem "rails_12factor"
 gem "geocoder"
+
+
+gem 'faraday'
+gem 'faker'
