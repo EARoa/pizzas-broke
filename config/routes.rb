@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  root 'maps#show'
 
 namespace :api do
     get "places" => 'places#index'

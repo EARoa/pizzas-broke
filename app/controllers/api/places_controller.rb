@@ -1,6 +1,6 @@
 class Api::PlacesController < ApplicationController
 
-protect_from_forgery with: :null_session
+protect_from_forgery with: :reset_session
 
  def index
     @places = Place.all
