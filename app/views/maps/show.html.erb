@@ -9,9 +9,8 @@ $.getJSON("/api/places")
 .done(function(data){
   var pizzaIcon = L.icon({
     iconUrl: 'http://apps.timwhitlock.info/static/images/emoji/emoji-apple/1f355.png',
-    iconSize:    [40, 40], // size of the icon
-    iconAnchor:  [0, 0], // point of the icon which will correspond to marker's location
-    popupAnchor:  [0, 0] // point from which the popup should open relative to the iconAnchor
+    iconSize:    [38, 95], // size of the icon
+    iconAnchor:  [22, 94], // point of the icon which will correspond to marker's location
 });
   data.places.forEach(function(pizza){
       L.marker([pizza.lat, pizza.lng], {icon: pizzaIcon})
