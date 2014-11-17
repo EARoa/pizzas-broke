@@ -14,7 +14,7 @@ conn = Faraday.new(:url => 'http://localhost:3000/api/places')
     req.url '/api/places'
     req.headers['Content-Type'] = 'application/json'
     req.body = {
-      pizza_joint: {
+      place: {
         name: place_name,
         city: location
       }
